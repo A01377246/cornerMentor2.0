@@ -11,7 +11,11 @@ import mx.itesm.cornermentor20.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
 
+
+
     private var _binding: FragmentHomeBinding? = null
+
+    private lateinit var userName: String
 
     // This property is only valid between onCreateView and
     // onDestroyView.

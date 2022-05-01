@@ -9,7 +9,11 @@
         android:id="@+id/navigation_home"
         android:name="mx.itesm.cornermentor20.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <argument
+            android:name="userName"
+            app:argType="string" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_dashboard"

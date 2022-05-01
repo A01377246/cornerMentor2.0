@@ -40,12 +40,11 @@ class LoginScreen : AppCompatActivity() {
             println("Correo: ${user?.email}")
             println("Token: ${user?.uid}")
             //if everything is correct, enter app using an intent, load something else
-
             Toast.makeText(this, "Bienvenido a CornerMentor, ${user?.displayName}", Toast.LENGTH_SHORT)
 
-
             val appint = Intent(this, MainActivity::class.java) // requires content and main activity :: represent metadata
-            startActivity(appint)
+            appint.putExtra("usuario", user?.displayName) //pasar un parámetro al intent MainActivity
+            startActivity(appint) // iniciar la actividad
             finish()
 
         }else{
