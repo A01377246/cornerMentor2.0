@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.RecyclerView
 
 class AdaptadorMateria(private val context: Context, var arrMaterias:Array<Materia>):
     RecyclerView.Adapter<AdaptadorMateria.RenglonMateria>(){
+    var listener: ListenerRecycler? = null
+
         class RenglonMateria(var vistaRenglon: View): RecyclerView.ViewHolder(vistaRenglon){
            fun set(materia: Materia){
                vistaRenglon.findViewById<TextView>(R.id.tvMateria).text = materia.nombre
@@ -35,6 +37,10 @@ class AdaptadorMateria(private val context: Context, var arrMaterias:Array<Mater
         //llenar con valores un renglón (position)
         val materia= arrMaterias[position]
         holder.set(materia)
+        holder.vistaRenglon.setOnClickListener{
+            listener?.itemClicked(position)
+
+        }
     }
 
 

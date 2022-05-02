@@ -13,6 +13,9 @@
         <argument
             android:name="userName"
             app:argType="string" />
+        <action
+            android:id="@+id/action_navigation_home_to_infoMateriaFrag"
+            app:destination="@id/infoMateriaFrag" />
     </fragment>
 
     <fragment
@@ -26,4 +29,13 @@
         android:name="mx.itesm.cornermentor20.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/infoMateriaFrag"
+        android:name="mx.itesm.cornermentor20.InfoMateriaFrag"
+        android:label="info_materia_fragment"
+        tools:layout="@layout/info_materia_fragment" >
+        <argument
+            android:name="materia"
+            app:argType="mx.itesm.cornermentor20.Materia" />
+    </fragment>
 </navigation>

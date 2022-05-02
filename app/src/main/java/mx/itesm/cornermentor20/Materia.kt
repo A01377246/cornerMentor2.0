@@ -1,5 +1,10 @@
 package mx.itesm.cornermentor20
 
-data class Materia(val nombre: String, val idImagen: Int) {
+import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
-}
+data class Materia(
+    @SerializedName("materia")
+    val nombre: String,
+    @SerializedName("imagen")
+    val idImagen: Int): Serializable
