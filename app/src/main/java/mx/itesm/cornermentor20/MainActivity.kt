@@ -2,6 +2,7 @@ package mx.itesm.cornermentor20
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
@@ -9,7 +10,6 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import androidx.recyclerview.widget.RecyclerView
 import mx.itesm.cornermentor20.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -18,6 +18,13 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+
+        val buttonClick=findViewById<Button>(R.id.imgbPerfil)
+        buttonClick.setOnClickListener{
+            val intent=Intent(this, pantallaNueva::class.java)
+            startActivity(intent)
+        }
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)

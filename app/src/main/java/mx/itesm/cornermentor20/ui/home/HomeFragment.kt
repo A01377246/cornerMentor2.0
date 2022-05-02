@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.SearchView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -38,7 +40,7 @@ class HomeFragment : Fragment(), ListenerRecycler {
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
+        val arrMaterias1= arrayOf("Cambio climatico y sostenibilidad","Ingles","Calculo 1")
         val arrMaterias = arrayOf(Materia("Cambio climático y sostenibilidad", 0), Materia("Inglés", 0), Materia("Cálculo 1" , 0))
         val layout = LinearLayoutManager(requireContext())
         layout.orientation = LinearLayoutManager.VERTICAL
@@ -53,10 +55,36 @@ class HomeFragment : Fragment(), ListenerRecycler {
         }
 
         */
+
+
+
+        val userAdapter: ArrayAdapter<String> = ArrayAdapter(
+            this,android.R.layout.simple_list_item_1,
+            arrMaterias1
+        )
+        binding.svFiltrado.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                binding.svFiltrado.clearFocus()
+                if(arrMaterias.toString().contains(query.toString())){
+                    userAdapter.filter.filter(query)
+                }
+                    return false
+            }
+
+
+            override fun onQueryTextChange(p0: String?): Boolean {
+                userAdapter.filter.filter(p0)
+                return false
+
+            }
+        })
+
         return root
 
-
     }
+
+
+
 
     override fun onDestroyView() {
         super.onDestroyView()
