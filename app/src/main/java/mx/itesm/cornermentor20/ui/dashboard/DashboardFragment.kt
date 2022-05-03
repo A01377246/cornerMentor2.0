@@ -25,10 +25,10 @@ class DashboardFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        //_binding?.btnCreditos?.setOnClickListener{
-           // val intent:Intent = Intent(this, pantallaNueva::class.java)
-           // startActivity(intent)
-      //  }
+        binding?.btnCreditos?.setOnClickListener{
+            val intent:Intent = Intent(requireContext(), pantallaNueva::class.java)
+            startActivity(intent)
+       }
 
         val dashboardViewModel =
             ViewModelProvider(this).get(DashboardViewModel::class.java)

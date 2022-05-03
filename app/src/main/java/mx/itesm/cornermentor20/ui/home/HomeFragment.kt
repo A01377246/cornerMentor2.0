@@ -1,5 +1,6 @@
 package mx.itesm.cornermentor20.ui.home
 
+import android.R
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -49,18 +50,13 @@ class HomeFragment : Fragment(), ListenerRecycler {
         binding.rvMaterias.adapter = adaptadorMateria
         adaptadorMateria.listener = this // convertir esta clase en el listener del adaptador para que al dar click se ejecute una opción
 
-       /* val textView: TextView = binding.textHome
+        val textView: TextView = binding.textView
         homeViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
 
-        */
-
-
-/*/Asesoria
-
         val userAdapter: ArrayAdapter<String> = ArrayAdapter(
-            this,android.R.layout.simple_list_item_1,
+            requireContext(), R.layout.simple_list_item_1,
             arrMaterias1
         )
         binding.svFiltrado.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
@@ -72,18 +68,13 @@ class HomeFragment : Fragment(), ListenerRecycler {
                     return false
             }
 
-
             override fun onQueryTextChange(p0: String?): Boolean {
                 userAdapter.filter.filter(p0)
                 return false
 
             }
         })
-
- */
-
         return root
-
     }
 
     override fun onDestroyView() {
