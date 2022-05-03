@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tipoprofesor"
+    app:startDestination="@id/infoMateriaFrag2">
+
+    <fragment
+        android:id="@+id/infoMateriaFrag2"
+        android:name="mx.itesm.cornermentor20.InfoMateriaFrag"
+        android:label="info_materia_fragment"
+        tools:layout="@layout/info_materia_fragment" >
+        <action
+            android:id="@+id/action_infoMateriaFrag2_to_pantallaNueva"
+            app:destination="@id/pantallaNueva" />
+    </fragment>
+    <activity
+        android:id="@+id/pantallaNueva"
+        android:name="mx.itesm.cornermentor20.pantallaNueva"
+        android:label="pantallaNueva" >
+        <argument
+            android:name="tipoProfesor"
+            app:argType="string" />
+    </activity>
+</navigation>
