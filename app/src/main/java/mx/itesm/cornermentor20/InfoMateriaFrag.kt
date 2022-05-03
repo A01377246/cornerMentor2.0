@@ -6,12 +6,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.ListFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import mx.itesm.cornermentor20.databinding.InfoMateriaFragmentBinding
 import java.text.FieldPosition
 
-class InfoMateriaFrag : Fragment() {
+class InfoMateriaFrag : ListFragment() {
 
 
     companion object {
@@ -24,6 +25,7 @@ class InfoMateriaFrag : Fragment() {
 
     private lateinit var binding: InfoMateriaFragmentBinding
 
+    private lateinit var arrAsesorias: ArrayList<String>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
