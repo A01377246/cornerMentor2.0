@@ -20,11 +20,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
 
-        val buttonClick=findViewById<Button>(R.id.imgbPerfil)
-        buttonClick.setOnClickListener{
-            val intent=Intent(this, pantallaNueva::class.java)
-            startActivity(intent)
-        }
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)

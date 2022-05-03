@@ -1,5 +1,6 @@
 package mx.itesm.cornermentor20.ui.dashboard
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import mx.itesm.cornermentor20.databinding.FragmentDashboardBinding
+import mx.itesm.cornermentor20.pantallaNueva
 
 class DashboardFragment : Fragment() {
 
@@ -22,6 +24,12 @@ class DashboardFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
+        //_binding?.btnCreditos?.setOnClickListener{
+           // val intent:Intent = Intent(this, pantallaNueva::class.java)
+           // startActivity(intent)
+      //  }
+
         val dashboardViewModel =
             ViewModelProvider(this).get(DashboardViewModel::class.java)
 

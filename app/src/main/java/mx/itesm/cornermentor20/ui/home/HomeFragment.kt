@@ -53,37 +53,30 @@ class HomeFragment : Fragment(), ListenerRecycler {
         homeViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
-
         */
+        //val userAdapter: ArrayAdapter<String> = ArrayAdapter(
+           // this,android.R.layout.simple_list_item_1,
+            //arrMaterias1
+        //)
+        //binding.svFiltrado.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+           // override fun onQueryTextSubmit(query: String?): Boolean {
+             //   binding.svFiltrado.clearFocus()
+               ////   userAdapter.filter.filter(query)
+               // }
+                 //   return false
+            //}
 
 
+            //override fun onQueryTextChange(p0: String?): Boolean {
+              //  userAdapter.filter.filter(p0)
+                //return false
 
-        val userAdapter: ArrayAdapter<String> = ArrayAdapter(
-            this,android.R.layout.simple_list_item_1,
-            arrMaterias1
-        )
-        binding.svFiltrado.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                binding.svFiltrado.clearFocus()
-                if(arrMaterias.toString().contains(query.toString())){
-                    userAdapter.filter.filter(query)
-                }
-                    return false
-            }
-
-
-            override fun onQueryTextChange(p0: String?): Boolean {
-                userAdapter.filter.filter(p0)
-                return false
-
-            }
-        })
+            //}
+        //})
 
         return root
 
     }
-
-
 
 
     override fun onDestroyView() {
