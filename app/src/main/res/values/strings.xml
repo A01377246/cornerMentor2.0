@@ -13,4 +13,26 @@
         <item>Redes</item>
         <item>Sistemas embebidos</item>
     </string-array>
+
+    <string-array name = "Nombres">
+        <item>Jose Perez</item>
+        <item>Ivan Alejandro</item>
+        <item>Muriel Lopez</item>
+        <item>Perez Juanes</item>
+        <item>Jose Antonio</item>
+        <item>Humberto Sancho</item>
+        <item>Gilberto Alvarez</item>
+    </string-array>
+
+    <string-array name = "Horarios">
+        <item>LuJu 11:30 – 12:00</item>
+        <item>MaVi 14:00 – 16:00</item>
+        <item>LuJuVi 08:30 – 10:00</item>
+        <item>MiVi 15:00 - 18:00</item>
+        <item>LuVi 09:00 - 11:00</item>
+        <item>MiJu 10:00 - 13:00</item>
+        <item>MaJu 15:00 - 17:00</item>
+    </string-array>
+
+
 </resources>

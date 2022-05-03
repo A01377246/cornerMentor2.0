@@ -6,8 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import mx.itesm.cornermentor20.databinding.InfoMateriaFragmentBinding
+import java.text.FieldPosition
 
 class InfoMateriaFrag : Fragment() {
 
@@ -22,6 +24,7 @@ class InfoMateriaFrag : Fragment() {
 
     private lateinit var binding: InfoMateriaFragmentBinding
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -29,7 +32,14 @@ class InfoMateriaFrag : Fragment() {
     ): View? {
         binding = InfoMateriaFragmentBinding.inflate(layoutInflater)
         return binding.root
+
+        binding.btnSiguiente.setOnClickListener {
+            val action = InfoMateriaFragDirections.actionInfoMateriaFrag2ToPantallaNueva(tipoProfesor = "Nombres")
+            findNavController().navigate(action)
+        }
+
     }
+
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -37,5 +47,7 @@ class InfoMateriaFrag : Fragment() {
             val nombreMateria = args.materia.nombre
             binding.TvMateria.text = "Asesorías para ${nombreMateria}"
     }
+
+
 
 }

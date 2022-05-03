@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 class pantallaNueva :AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.pantallacreditos)
+        setContentView(R.layout.pantallaprofesor)
     }
 
 
