@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import androidx.fragment.app.ListFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -48,6 +49,9 @@ class InfoMateriaFrag : ListFragment() {
 
             val nombreMateria = args.materia.nombre
             binding.TvMateria.text = "Asesorías para ${nombreMateria}"
+            println("La lista de submaterias para ${args.materia.nombre} es ${args.materia.submaterias}")
+
+            
     }
 
 

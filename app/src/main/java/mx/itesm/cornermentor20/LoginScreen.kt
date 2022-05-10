@@ -20,7 +20,6 @@ class LoginScreen : AppCompatActivity() {
         setContentView(R.layout.activity_login_screen)
         binding = ActivityLoginScreenBinding.inflate(layoutInflater)
         setContentView(binding.root) // establecer binding como la vista
-
         binding.botonIniciarConGoogle.setOnClickListener{
             autenticarConGoogle()
         }

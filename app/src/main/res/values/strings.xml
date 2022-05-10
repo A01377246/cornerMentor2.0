@@ -4,7 +4,7 @@
     <string name="title_dashboard">Mis Asesorías programadas</string>
     <string name="title_notifications">Notifications</string>
 
-    <string-array name = "Materias">
+    <string-array name="Materias">
         <item>Programación</item>
         <item>Cálculo</item>
         <item>Cambio climático y sostenibilidad</item>
@@ -14,7 +14,7 @@
         <item>Sistemas embebidos</item>
     </string-array>
 
-    <string-array name = "Nombres">
+    <string-array name="Nombres">
         <item>Jose Perez</item>
         <item>Ivan Alejandro</item>
         <item>Muriel Lopez</item>
@@ -24,7 +24,7 @@
         <item>Gilberto Alvarez</item>
     </string-array>
 
-    <string-array name = "Horarios">
+    <string-array name="Horarios">
         <item>LuJu 11:30 – 12:00</item>
         <item>MaVi 14:00 – 16:00</item>
         <item>LuJuVi 08:30 – 10:00</item>
@@ -33,6 +33,15 @@
         <item>MiJu 10:00 - 13:00</item>
         <item>MaJu 15:00 - 17:00</item>
     </string-array>
+    <string name="title_activity_eleccion_rol">EleccionRol</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
 
 </resources>

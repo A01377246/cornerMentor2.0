@@ -1,6 +1,5 @@
 package mx.itesm.cornermentor20.ui.home
 
-import android.R
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,7 +12,11 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import mx.itesm.cornermentor20.AdaptadorMateria
+import mx.itesm.cornermentor20.Asesoria
 import mx.itesm.cornermentor20.ListenerRecycler
 import mx.itesm.cornermentor20.Materia
 import mx.itesm.cornermentor20.databinding.FragmentHomeBinding
@@ -23,6 +26,8 @@ class HomeFragment : Fragment(), ListenerRecycler {
     private var _binding: FragmentHomeBinding? = null
 
     private lateinit var userName: String
+
+    private lateinit var baseDatos: FirebaseDatabase
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -41,22 +46,29 @@ class HomeFragment : Fragment(), ListenerRecycler {
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
-        val arrMaterias1= arrayOf("Cambio climatico y sostenibilidad","Ingles","Calculo 1")
-        val arrMaterias = arrayOf(Materia("Cambio climático y sostenibilidad", 0), Materia("Inglés", 0), Materia("Cálculo 1" , 0))
+        val arrSubMaterias = arrayListOf<String>("x","y","z")
+        val arrMaterias = arrayOf(Materia("Cambio climático y sostenibilidad", 0, arrSubMaterias), Materia("Inglés", 0, arrSubMaterias), Materia("Cálculo 1" , 0, arrSubMaterias))
         val layout = LinearLayoutManager(requireContext())
         layout.orientation = LinearLayoutManager.VERTICAL
         binding.rvMaterias.layoutManager = layout
         adaptadorMateria = AdaptadorMateria(requireContext(), arrMaterias)
         binding.rvMaterias.adapter = adaptadorMateria
         adaptadorMateria.listener = this // convertir esta clase en el listener del adaptador para que al dar click se ejecute una opción
+        baseDatos = Firebase.database
 
-        val textView: TextView = binding.textView
+
+       /* val textView: TextView = binding.textHome
         homeViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
 
+        */
+
+
+/*/Asesoria
+
         val userAdapter: ArrayAdapter<String> = ArrayAdapter(
-            requireContext(), R.layout.simple_list_item_1,
+            this,android.R.layout.simple_list_item_1,
             arrMaterias1
         )
         binding.svFiltrado.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
@@ -68,13 +80,31 @@ class HomeFragment : Fragment(), ListenerRecycler {
                     return false
             }
 
+
             override fun onQueryTextChange(p0: String?): Boolean {
                 userAdapter.filter.filter(p0)
                 return false
 
             }
         })
+
+ */
+        escribirDatosAsesoriaPrueba()
+
         return root
+
+    }
+
+    private fun escribirDatosAsesoriaPrueba(){ //funcion de prueba para crear algunos registros en la base de datos
+
+        var asesoria1 = Asesoria("Inglés", "Martín", "5/3/2022", "12" ) //Modficiar para que cada asesoria tenga su ruta
+        var asesoria2 = Asesoria("Inglés", "Giglia", "5/3/2022", "16" )
+
+        val referencia = baseDatos.getReference("Asesorias")
+
+        referencia.setValue(asesoria1)
+        referencia.setValue(asesoria2)
+
     }
 
     override fun onDestroyView() {

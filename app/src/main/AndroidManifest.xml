@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="mx.itesm.cornermentor20">
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -10,6 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CornerMentor20">
+        <activity
+            android:name=".roleSelection"
+            android:exported="false" />
+        <activity
+            android:name=".EleccionRol"
+            android:exported="false"
+            android:label="@string/title_activity_eleccion_rol"
+            android:theme="@style/Theme.CornerMentor20.NoActionBar" />
         <activity
             android:name=".LoginScreen"
             android:exported="true">
@@ -22,11 +31,8 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="@string/app_name">
-
-        </activity>
-        <activity android:name=".pantallaNueva"></activity>
+            android:label="@string/app_name"></activity>
+        <activity android:name=".pantallaNueva" />
     </application>
-    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

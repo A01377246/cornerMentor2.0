@@ -4,7 +4,10 @@ import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
 data class Materia(
-    @SerializedName("materia")
     val nombre: String,
-    @SerializedName("imagen")
-    val idImagen: Int): Serializable
+    val idImagen: Int,
+    val submaterias: ArrayList<String>
+
+):Serializable
+
+    //Lista de submaterias en arreglo y pasarla a la siguiente pantalla (Arrelgo de strings)
