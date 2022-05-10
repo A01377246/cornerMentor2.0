@@ -46,7 +46,8 @@ class HomeFragment : Fragment(), ListenerRecycler {
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
-        val arrMaterias = arrayOf(Materia("Cambio climático y sostenibilidad", 0), Materia("Inglés", 0), Materia("Cálculo 1" , 0))
+        val arrSubMaterias = arrayListOf<String>("x","y","z")
+        val arrMaterias = arrayOf(Materia("Cambio climático y sostenibilidad", 0, arrSubMaterias), Materia("Inglés", 0, arrSubMaterias), Materia("Cálculo 1" , 0, arrSubMaterias))
         val layout = LinearLayoutManager(requireContext())
         layout.orientation = LinearLayoutManager.VERTICAL
         binding.rvMaterias.layoutManager = layout
