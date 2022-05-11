@@ -1,5 +1,6 @@
 package mx.itesm.cornermentor20.ui.home
 
+import android.os.Build.VERSION_CODES.M
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,13 +13,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ktx.database
+//import com.google.firebase.database.FirebaseDatabase
+//import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import mx.itesm.cornermentor20.AdaptadorMateria
-import mx.itesm.cornermentor20.Asesoria
-import mx.itesm.cornermentor20.ListenerRecycler
-import mx.itesm.cornermentor20.Materia
+import mx.itesm.cornermentor20.*
 import mx.itesm.cornermentor20.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment(), ListenerRecycler {
@@ -27,7 +25,7 @@ class HomeFragment : Fragment(), ListenerRecycler {
 
     private lateinit var userName: String
 
-    private lateinit var baseDatos: FirebaseDatabase
+    //private lateinit var baseDatos: FirebaseDatabase
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -46,15 +44,21 @@ class HomeFragment : Fragment(), ListenerRecycler {
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
-        val arrSubMaterias = arrayListOf<String>("x","y","z")
-        val arrMaterias = arrayOf(Materia("Cambio climático y sostenibilidad", 0, arrSubMaterias), Materia("Inglés", 0, arrSubMaterias), Materia("Cálculo 1" , 0, arrSubMaterias))
+
+        //val arrSubMateriaMate = arrayListOf<String>("MateriaMate")
+        val arrSubMateriaMate= resources.getStringArray(R.array.MateriaMate)
+        val arrMateriaProgra= resources.getStringArray(R.array.MateriaProgra)
+        val arrSubMateriaIngles=resources.getStringArray(R.array.MateriaIngles)
+
+
+        val arrMaterias = arrayOf(Materia("Programacion", 0, arrMateriaProgra), Materia("Inglés", 0, arrSubMateriaIngles), Materia("Matematicas" , 0, arrSubMateriaMate))
         val layout = LinearLayoutManager(requireContext())
         layout.orientation = LinearLayoutManager.VERTICAL
         binding.rvMaterias.layoutManager = layout
         adaptadorMateria = AdaptadorMateria(requireContext(), arrMaterias)
         binding.rvMaterias.adapter = adaptadorMateria
         adaptadorMateria.listener = this // convertir esta clase en el listener del adaptador para que al dar click se ejecute una opción
-        baseDatos = Firebase.database
+        //baseDatos = Firebase.database
 
 
        /* val textView: TextView = binding.textHome
@@ -89,23 +93,25 @@ class HomeFragment : Fragment(), ListenerRecycler {
         })
 
  */
-        escribirDatosAsesoriaPrueba()
+        //escribirDatosAsesoriaPrueba()
 
         return root
 
     }
 
-    private fun escribirDatosAsesoriaPrueba(){ //funcion de prueba para crear algunos registros en la base de datos
+    // private fun escribirDatosAsesoriaPrueba(){ //funcion de prueba para crear algunos registros en la base de datos
 
-        var asesoria1 = Asesoria("Inglés", "Martín", "5/3/2022", "12" ) //Modficiar para que cada asesoria tenga su ruta
-        var asesoria2 = Asesoria("Inglés", "Giglia", "5/3/2022", "16" )
+        //var asesoria1 = Asesoria("Inglés", "Martín", "5/3/2022", "12" ) //Modficiar para que cada asesoria tenga su ruta
+        //var asesoria2 = Asesoria("Inglés", "Giglia", "5/3/2022", "16" )
 
-        val referencia = baseDatos.getReference("Asesorias")
+       // val referencia = baseDatos.getReference("Asesorias")
 
-        referencia.setValue(asesoria1)
-        referencia.setValue(asesoria2)
+        //referencia.setValue(asesoria1)
+        //referencia.setValue(asesoria2)
 
-    }
+    //}
+
+
 
     override fun onDestroyView() {
         super.onDestroyView()
@@ -115,11 +121,8 @@ class HomeFragment : Fragment(), ListenerRecycler {
     override fun itemClicked(position: Int) {
         val materia = adaptadorMateria.arrMaterias[position]
         println("Click en ${materia.nombre}")
-
         //Navegar hacia el fragmento donde se mostrarán las asesorías disponibles para deterrminada materia
-
         val accion = HomeFragmentDirections.actionNavigationHomeToInfoMateriaFrag(materia)
-
         findNavController().navigate(accion) //navegar hacia el fragmento que mostrará la materia
     }
 }

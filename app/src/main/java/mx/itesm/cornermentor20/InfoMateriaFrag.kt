@@ -40,6 +40,7 @@ class InfoMateriaFrag : ListFragment() {
             val action = InfoMateriaFragDirections.actionInfoMateriaFrag2ToPantallaNueva(tipoProfesor = "Nombres")
             findNavController().navigate(action)
         }
+        //
 
     }
 
@@ -49,7 +50,14 @@ class InfoMateriaFrag : ListFragment() {
 
             val nombreMateria = args.materia.nombre
             binding.TvMateria.text = "Asesorías para ${nombreMateria}"
-            println("La lista de submaterias para ${args.materia.nombre} es ${args.materia.submaterias}")
+            println("La lista de submaterias para ${args.materia.nombre} es ${args.materia.submaterias[5]}")
+
+            val adaptadorsubMaterias=ArrayAdapter(requireContext(),
+                android.R.layout.simple_spinner_item,args.materia.submaterias)
+
+
+
+
 
             
     }
