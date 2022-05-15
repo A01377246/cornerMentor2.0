@@ -17,12 +17,16 @@ class LoginScreen : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_login_screen)
         binding = ActivityLoginScreenBinding.inflate(layoutInflater)
         setContentView(binding.root) // establecer binding como la vista
         binding.botonIniciarConGoogle.setOnClickListener{
             autenticarConGoogle()
         }
+        val appint = Intent(this, MainActivity::class.java) // requires content and main activity :: represent metadata
+         //pasar un parámetro al intent MainActivity
+        startActivity(appint) // iniciar la actividad
     }
 
     private val signInLauncher = registerForActivityResult(

@@ -5,13 +5,9 @@
     <string name="title_notifications">Notifications</string>
 
     <string-array name="Materias">
-        <item>Programación</item>
-        <item>Cálculo</item>
-        <item>Cambio climático y sostenibilidad</item>
-        <item>Mecánica de Fluidos</item>
+        <item>Programacion</item>
+        <item>Matematicas</item>
         <item>Inglés</item>
-        <item>Redes</item>
-        <item>Sistemas embebidos</item>
     </string-array>
 
  <!--String array para las submaterias de Computación -->
@@ -60,6 +56,33 @@
         <item>Gilberto Alvarez</item>
     </string-array>
 
+    <string-array name="MateriaProgra">
+        <item> Programacion Orientada a objetos</item>
+        <item> Estructura de datos</item>
+        <item> Fundamentos de programacion</item>
+        <item> Lenguajes de programacion</item>
+        <item> Desarrollo de aplicaciones moviles </item>
+        <item> Desarrollo de apliaciones web</item>
+    </string-array>
+
+    <string-array name="MateriaMate">
+        <item> Algebra lineal</item>
+        <item> Matematicas 1</item>
+        <item> Matematicas 2</item>
+        <item> Matematicas 3</item>
+        <item> Matematicas discretas </item>
+        <item> Metodos cuantitativos y simulacion</item>
+    </string-array>
+
+    <string-array name="MateriaIngles">
+        <item> Remedial I</item>
+        <item> Remedial II</item>
+        <item> Remedial III</item>
+        <item> Remedial IV</item>
+        <item> Remedial V</item>
+        <item> Lengua Extranjera</item>
+    </string-array>
+
     <string-array name="Horarios">
         <item>LuJu 11:30 – 12:00</item>
         <item>MaVi 14:00 – 16:00</item>
@@ -68,6 +91,7 @@
         <item>LuVi 09:00 - 11:00</item>
         <item>MiJu 10:00 - 13:00</item>
         <item>MaJu 15:00 - 17:00</item>
+
     </string-array>
     <string name="title_activity_eleccion_rol">EleccionRol</string>
     <!-- Strings used for fragments for navigation -->

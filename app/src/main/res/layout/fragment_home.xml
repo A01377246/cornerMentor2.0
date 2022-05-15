@@ -38,8 +38,8 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="411dp"
-        android:layout_height="33dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:text="Buscar asesoría para una materia"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintEnd_toEndOf="parent"
