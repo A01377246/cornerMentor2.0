@@ -51,7 +51,9 @@ class InfoMateriaFrag : ListFragment() {
             binding.TvMateria.text = "Asesorías para ${nombreMateria}"
             println("La lista de submaterias para ${args.materia.nombre} es ${args.materia.submaterias}")
 
-            
+        //Crear un adaptador que
+            val adaptadorSpinnerAsesoria = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, args.materia.submaterias)
+            binding.sPAsesorias.adapter = adaptadorSpinnerAsesoria
     }
 
 

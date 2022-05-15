@@ -14,6 +14,42 @@
         <item>Sistemas embebidos</item>
     </string-array>
 
+ <!--String array para las submaterias de Computación -->
+
+    <string-array name = "SubmateriasComputacion">
+        <item>Programación Orientada a Objetos</item>
+        <item>Estructura de Datos</item>
+        <item>Fundamentos de Programación</item>
+        <item>Lenguajes de Programación</item>
+        <item>Desarrollo de Aplicaciones Móviles</item>
+        <item>Desarrollo de Aplicaciones Web</item>
+    </string-array>
+
+    <!--String array para las submaterias de Ingeniería de Software -->
+
+    <string-array name = "SubmateriasMatematicas">
+        <item>Álgebra Lineal</item>
+        <item>Matemáticas I</item>
+        <item>Matemáticas II</item>
+        <item>Matemáticas III</item>
+        <item>Matemáticas Discretas</item>
+        <item>Métodos Cuantitativos y simulación</item>
+    </string-array>
+
+    <!--String array para las submaterias de Ingeniería de Software -->
+    <string-array name = "SubmateriasIngenieriaDeSoftware">
+        <item>Fundamentos de Diseño Interactivo </item>
+        <item>Fundamentos de Ingeniería de Software</item>
+        <item>Análisis y modelación de Sistemas de Software</item>
+        <item>Calidad y Pruebas de Software</item>
+        <item>Administración de Proyectos de ingenieria de Software</item>
+    </string-array>
+
+
+
+
+
+
     <string-array name="Nombres">
         <item>Jose Perez</item>
         <item>Ivan Alejandro</item>

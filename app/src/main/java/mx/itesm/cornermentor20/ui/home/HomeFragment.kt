@@ -15,10 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import mx.itesm.cornermentor20.AdaptadorMateria
-import mx.itesm.cornermentor20.Asesoria
-import mx.itesm.cornermentor20.ListenerRecycler
-import mx.itesm.cornermentor20.Materia
+import mx.itesm.cornermentor20.*
 import mx.itesm.cornermentor20.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment(), ListenerRecycler {
@@ -46,8 +43,19 @@ class HomeFragment : Fragment(), ListenerRecycler {
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
-        val arrSubMaterias = arrayListOf<String>("x","y","z")
-        val arrMaterias = arrayOf(Materia("Cambio climático y sostenibilidad", 0, arrSubMaterias), Materia("Inglés", 0, arrSubMaterias), Materia("Cálculo 1" , 0, arrSubMaterias))
+
+        //Recuperar los string de submaterias para cada materia y asignarle una variable
+        val arrSubMateriasMatematicas = resources.getStringArray(R.array.SubmateriasMatematicas)
+        val arrSubMateriasComputacion = resources.getStringArray(R.array.SubmateriasComputacion)
+        val arrSubMateriasIngenieriaDeSoftware = resources.getStringArray(R.array.SubmateriasIngenieriaDeSoftware)
+
+        // Crear un arreglo de Materias pasando como parametro nombre (imagen opcional) y lista de submaterias)
+
+        val arrMaterias = arrayOf(
+            Materia("Computación", 0, arrSubMateriasComputacion),
+            Materia("Matemáticas", 0, arrSubMateriasMatematicas),
+            Materia("Ingeniería de Software", 0, arrSubMateriasIngenieriaDeSoftware)
+        )
         val layout = LinearLayoutManager(requireContext())
         layout.orientation = LinearLayoutManager.VERTICAL
         binding.rvMaterias.layoutManager = layout
@@ -57,7 +65,7 @@ class HomeFragment : Fragment(), ListenerRecycler {
         baseDatos = Firebase.database
 
 
-       /* val textView: TextView = binding.textHome
+        /* val textView: TextView = binding.textHome
         homeViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
@@ -95,12 +103,13 @@ class HomeFragment : Fragment(), ListenerRecycler {
 
     }
 
+
     private fun escribirDatosAsesoriaPrueba(){ //funcion de prueba para crear algunos registros en la base de datos
 
         var asesoria1 = Asesoria("Inglés", "Martín", "5/3/2022", "12" ) //Modficiar para que cada asesoria tenga su ruta
         var asesoria2 = Asesoria("Inglés", "Giglia", "5/3/2022", "16" )
 
-        val referencia = baseDatos.getReference("Asesorias")
+        val referencia = baseDatos.getReference("Asesorias").push()
 
         referencia.setValue(asesoria1)
         referencia.setValue(asesoria2)

@@ -6,7 +6,7 @@ import java.io.Serializable
 data class Materia(
     val nombre: String,
     val idImagen: Int,
-    val submaterias: ArrayList<String>
+    val submaterias: Array<String>
 
 ):Serializable
 

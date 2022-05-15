@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
-        android:id="@+id/asesoriasDisponible"
+        android:id="@+id/sPAsesorias"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
@@ -41,6 +41,6 @@
         android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/asesoriasDisponible" />
+        app:layout_constraintTop_toBottomOf="@+id/sPAsesorias" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
