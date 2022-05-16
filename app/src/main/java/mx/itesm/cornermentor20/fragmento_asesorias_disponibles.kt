@@ -8,10 +8,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.NavArgs
 import androidx.navigation.fragment.navArgs
+import androidx.recyclerview.widget.LinearLayoutManager
 import mx.itesm.cornermentor20.databinding.FragmentFragmentoAsesoriasDisponiblesBinding
 import mx.itesm.cornermentor20.databinding.InfoMateriaFragmentBinding
+import mx.itesm.cornermentor20.ui.AdaptadorAsesoria
 
 class fragmento_asesorias_disponibles : Fragment() {
+
+    var adaptadorAsesoria: AdaptadorAsesoria? = null
 
     companion object {
         fun newInstance() = fragmento_asesorias_disponibles()
@@ -24,16 +28,29 @@ class fragmento_asesorias_disponibles : Fragment() {
     private lateinit var binding: FragmentFragmentoAsesoriasDisponiblesBinding
 
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentFragmentoAsesoriasDisponiblesBinding.inflate(layoutInflater)
+
+        val arrAsesoria = arrayOf(Asesoria("Prueba", "Griselda", "5/16/2022", "18:00", ""))
+        val layout = LinearLayoutManager(requireContext())
+        layout.orientation = LinearLayoutManager.VERTICAL
+        binding.rvAsesorias.layoutManager = layout
+
+        adaptadorAsesoria = AdaptadorAsesoria(requireContext(), arrAsesoria)
+        binding.rvAsesorias.adapter = adaptadorAsesoria
+
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
+
+
+
+
         val subMateria = args.subMateriaSeleccionada
         binding.TVAsesorias.text = "Estas son las asesorías disponibles para: ${subMateria}"
 

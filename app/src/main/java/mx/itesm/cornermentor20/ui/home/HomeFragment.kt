@@ -106,14 +106,15 @@ class HomeFragment : Fragment(), ListenerRecycler {
 
     private fun escribirDatosAsesoriaPrueba(){ //funcion de prueba para crear algunos registros en la base de datos
 
-        var asesoria1 = Asesoria("Inglés", "Martín", "5/3/2022", "12" ) //Modficar para que cada asesoria tenga su ruta
-        var asesoria2 = Asesoria("Inglés", "Giglia", "5/3/2022", "16" )
+        //var asesoria1 = Asesoria("Matemáticas Dicretas", "Renato", "5/16/2022", "12", "" ) //Modficar para que cada asesoria tenga su ruta
 
-        val referencia = baseDatos.getReference("Asesorias").push()
+        //val referencia = baseDatos.getReference("Asesorias/Matemáticas Discretas").push()
 
-        referencia.setValue(asesoria1)
+        //referencia.setValue(asesoria1)
+
+        var asesoria2 = Asesoria("Matemáticas Dicretas", "Carlos", "5/16/2022", "15:00", "" )
+        val referencia = baseDatos.getReference("Asesorias/Matemáticas Discretas").push()
         referencia.setValue(asesoria2)
-
     }
 
     override fun onDestroyView() {
