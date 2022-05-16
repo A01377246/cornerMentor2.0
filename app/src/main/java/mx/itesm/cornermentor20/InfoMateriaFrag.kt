@@ -26,8 +26,6 @@ class InfoMateriaFrag : ListFragment() {
 
     private lateinit var binding: InfoMateriaFragmentBinding
 
-    private lateinit var arrAsesorias: ArrayList<String>
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -36,32 +34,28 @@ class InfoMateriaFrag : ListFragment() {
         binding = InfoMateriaFragmentBinding.inflate(layoutInflater)
         return binding.root
 
-        binding.btnSiguiente.setOnClickListener {
-            val action = InfoMateriaFragDirections.actionInfoMateriaFrag2ToPantallaNueva(tipoProfesor = "Nombres")
-            findNavController().navigate(action)
-        }
-        //
 
     }
-
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
             val nombreMateria = args.materia.nombre
             binding.TvMateria.text = "Asesorías para ${nombreMateria}"
-            println("La lista de submaterias para ${args.materia.nombre} es ${args.materia.submaterias[5]}")
+
 
             //val adaptadorsubMaterias=ArrayAdapter(requireContext(),
               //  android.R.layout.simple_spinner_item,args.materia.submaterias)
 
-
-
-
-
-        //Crear un adaptador que
             val adaptadorSpinnerAsesoria = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, args.materia.submaterias)
             binding.sPAsesorias.adapter = adaptadorSpinnerAsesoria
+
+            binding.btnSeleccionarSubMateria.setOnClickListener() {
+                var subMateriaSeleccionada = binding.sPAsesorias.selectedItem.toString() //Guardar la submateria seleccionada por el usuario para pasarla al siguiente fragmento
+                println("Has seleccionado : ${subMateriaSeleccionada}")
+                val accion = InfoMateriaFragDirections.actionInfoMateriaFragToFragmentoAsesoriasDisponibles(subMateriaSeleccionada) //Pasar al siguiente fragmento enviando la sub materia seleccionada
+                findNavController().navigate(accion)
+        }
     }
 
 

@@ -10,9 +10,9 @@
         <item>Inglés</item>
     </string-array>
 
- <!--String array para las submaterias de Computación -->
+    <!--String array para las submaterias de Computación -->
 
-    <string-array name = "SubmateriasComputacion">
+    <string-array name="SubmateriasComputacion">
         <item>Programación Orientada a Objetos</item>
         <item>Estructura de Datos</item>
         <item>Fundamentos de Programación</item>
@@ -21,9 +21,9 @@
         <item>Desarrollo de Aplicaciones Web</item>
     </string-array>
 
-    <!--String array para las submaterias de Ingeniería de Software -->
+    <!--String array para las submaterias de Matemáticas -->
 
-    <string-array name = "SubmateriasMatematicas">
+    <string-array name="SubmateriasMatematicas">
         <item>Álgebra Lineal</item>
         <item>Matemáticas I</item>
         <item>Matemáticas II</item>
@@ -33,17 +33,13 @@
     </string-array>
 
     <!--String array para las submaterias de Ingeniería de Software -->
-    <string-array name = "SubmateriasIngenieriaDeSoftware">
+    <string-array name="SubmateriasIngenieriaDeSoftware">
         <item>Fundamentos de Diseño Interactivo </item>
         <item>Fundamentos de Ingeniería de Software</item>
         <item>Análisis y modelación de Sistemas de Software</item>
         <item>Calidad y Pruebas de Software</item>
         <item>Administración de Proyectos de ingenieria de Software</item>
     </string-array>
-
-
-
-
 
 
     <string-array name="Nombres">
@@ -56,23 +52,6 @@
         <item>Gilberto Alvarez</item>
     </string-array>
 
-    <string-array name="MateriaProgra">
-        <item> Programacion Orientada a objetos</item>
-        <item> Estructura de datos</item>
-        <item> Fundamentos de programacion</item>
-        <item> Lenguajes de programacion</item>
-        <item> Desarrollo de aplicaciones moviles </item>
-        <item> Desarrollo de apliaciones web</item>
-    </string-array>
-
-    <string-array name="MateriaMate">
-        <item> Algebra lineal</item>
-        <item> Matematicas 1</item>
-        <item> Matematicas 2</item>
-        <item> Matematicas 3</item>
-        <item> Matematicas discretas </item>
-        <item> Metodos cuantitativos y simulacion</item>
-    </string-array>
 
     <string-array name="MateriaIngles">
         <item> Remedial I</item>
@@ -102,6 +81,8 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

@@ -10,4 +10,3 @@ data class Materia(
 
 ):Serializable
 
-    //Lista de submaterias en arreglo y pasarla a la siguiente pantalla (Arrelgo de strings)

@@ -106,7 +106,7 @@ class HomeFragment : Fragment(), ListenerRecycler {
 
     private fun escribirDatosAsesoriaPrueba(){ //funcion de prueba para crear algunos registros en la base de datos
 
-        var asesoria1 = Asesoria("Inglés", "Martín", "5/3/2022", "12" ) //Modficiar para que cada asesoria tenga su ruta
+        var asesoria1 = Asesoria("Inglés", "Martín", "5/3/2022", "12" ) //Modficar para que cada asesoria tenga su ruta
         var asesoria2 = Asesoria("Inglés", "Giglia", "5/3/2022", "16" )
 
         val referencia = baseDatos.getReference("Asesorias").push()
