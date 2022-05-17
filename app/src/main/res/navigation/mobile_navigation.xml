@@ -49,5 +49,8 @@
         <argument
             android:name="subMateriaSeleccionada"
             app:argType="string" />
+        <action
+            android:id="@+id/action_fragmento_asesorias_disponibles_to_navigation_dashboard"
+            app:destination="@id/navigation_dashboard" />
     </fragment>
 </navigation>

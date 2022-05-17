@@ -9,11 +9,15 @@ import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.FirebaseAuthUIActivityResultContract
 import com.firebase.ui.auth.data.model.FirebaseAuthUIAuthenticationResult
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import mx.itesm.cornermentor20.R
 import mx.itesm.cornermentor20.databinding.ActivityLoginScreenBinding
+import mx.itesm.cornermentor20.ui.Usuario
 
 class LoginScreen : AppCompatActivity() {
     private lateinit var binding: ActivityLoginScreenBinding // Obtener accesso a las objetos de la interfaz de login screen
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
