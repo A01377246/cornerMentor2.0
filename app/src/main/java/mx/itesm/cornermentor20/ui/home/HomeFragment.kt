@@ -112,7 +112,7 @@ class HomeFragment : Fragment(), ListenerRecycler {
 
         //referencia.setValue(asesoria1)
 
-        var asesoria2 = Asesoria("Matemáticas Dicretas", "Carlos", "5/16/2022", "15:00", "" )
+        var asesoria2 = Asesoria("Matemáticas Discretas", "Carlos", "5/16/2022", "15:00", "" )
         val referencia = baseDatos.getReference("Asesorias/Matemáticas Discretas").push()
         referencia.setValue(asesoria2)
     }

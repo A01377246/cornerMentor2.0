@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import mx.itesm.cornermentor20.Asesoria
+import mx.itesm.cornermentor20.ListenerRecycler
 import mx.itesm.cornermentor20.R
 
 //View Holder para las asesorías que serán descargadas de la base de datos
@@ -14,7 +15,7 @@ import mx.itesm.cornermentor20.R
 class AdaptadorAsesoria (private val contexto: Context, var arrAsesorias: Array<Asesoria>) :
     RecyclerView.Adapter<AdaptadorAsesoria.RenglonAsesoria>() {
 
-
+    var listener : ListenerRecycler? = null  //? permite recibir un null
 
     class RenglonAsesoria (var vistaRenglon: View) : RecyclerView.ViewHolder(vistaRenglon){
 
@@ -38,6 +39,10 @@ class AdaptadorAsesoria (private val contexto: Context, var arrAsesorias: Array<
     override fun onBindViewHolder(holder: RenglonAsesoria, position: Int) {
         val asesoria = arrAsesorias[position]
         holder.set(asesoria)
+
+        holder.vistaRenglon.setOnClickListener{
+            listener?.itemClicked(position)
+        }
     }
 
     override fun getItemCount(): Int {
