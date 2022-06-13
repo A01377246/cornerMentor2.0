@@ -90,7 +90,7 @@ class fragmento_asesorias_disponibles : Fragment(), ListenerRecycler{
 
         mensajeConfirmacion.setPositiveButton("Sí", DialogInterface.OnClickListener { dialogInterface, i ->
 
-            registrarAsesoria(asesoria)
+            registrarAsesoria(asesoria) //Agregar el UID del usuario a la asesoría para reservarla
             val accion = fragmento_asesorias_disponiblesDirections.actionFragmentoAsesoriasDisponiblesToNavigationDashboard()
             findNavController().navigate(accion)
 

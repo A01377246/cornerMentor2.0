@@ -25,7 +25,7 @@ class FragmentoAsesoriasDisponiblesVM : ViewModel() {
                 for (id in snapshot.children) { //Visit each node
                     for(registro in id.children){
                         val asesoria = registro.getValue(Asesoria::class.java)
-                        if(asesoria?.materia.toString() == subMateria){ // Guardar submaterias que coincidan con la materia seleccionada en un arreglo
+                        if(asesoria?.materia.toString() == subMateria && asesoria?.idAlumno.toString() == ""){ // Guardar submaterias que coincidan con la materia seleccionada en un arreglo y evitar aquellas que ya hayan sido registradas
                             if (asesoria != null) {
                                 listaSubMateria.add(asesoria)
                     }
