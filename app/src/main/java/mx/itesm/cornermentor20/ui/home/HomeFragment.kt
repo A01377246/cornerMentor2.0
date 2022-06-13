@@ -4,13 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.SearchView
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ktx.database
@@ -112,9 +108,14 @@ class HomeFragment : Fragment(), ListenerRecycler {
 
         //referencia.setValue(asesoria1)
 
-        var asesoria2 = Asesoria("Matemáticas Discretas", "Carlos", "5/16/2022", "15:00", "" )
-        val referencia = baseDatos.getReference("Asesorias/Matemáticas Discretas").push()
-        referencia.setValue(asesoria2)
+        var asesoria2 = Asesoria("Matemáticas Discretas", "Carlos", "6/13/2022", "15:00", "" )
+        val referencia = baseDatos.getReference("Asesorias/Matemáticas Discretas").push() // generar una llave única en la base de datos para las asesorías
+        val llave = referencia.key //Obtener la llave única
+        referencia.setValue(asesoria2) //Guardar la referencia en la base de datos
+        if (llave != null) { //Si la llave es diferente de null guardar su clave única como una de sus propiedades para accederlo después
+            baseDatos.reference.child("Asesorias/Matemáticas Discretas/${llave}").child("llaveAsesoria").setValue(llave)
+        }
+
     }
 
     override fun onDestroyView() {

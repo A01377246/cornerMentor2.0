@@ -5,10 +5,16 @@
       <map>
         <entry key="..\:/Users/super/AndroidStudioProjects/cornerMentor20/app/src/main/res/layout/activity_login_screen.xml" value="0.33" />
         <entry key="..\:/Users/super/AndroidStudioProjects/cornerMentor20/app/src/main/res/layout/activity_main.xml" value="0.6391184573002755" />
+        <entry key="..\:/Users/super/AndroidStudioProjects/cornerMentor20/app/src/main/res/layout/activity_role_selection.xml" value="0.3625" />
         <entry key="..\:/Users/super/AndroidStudioProjects/cornerMentor20/app/src/main/res/layout/fragment_asesorias_disponibles.xml" value="0.3625" />
+        <entry key="..\:/Users/super/AndroidStudioProjects/cornerMentor20/app/src/main/res/layout/fragment_dashboard.xml" value="0.3625" />
         <entry key="..\:/Users/super/AndroidStudioProjects/cornerMentor20/app/src/main/res/layout/fragment_fragmento_asesorias_disponibles.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/super/AndroidStudioProjects/cornerMentor20/app/src/main/res/layout/fragment_home.xml" value="0.33" />
+        <entry key="..\:/Users/super/AndroidStudioProjects/cornerMentor20/app/src/main/res/layout/fragment_notifications.xml" value="0.3625" />
         <entry key="..\:/Users/super/AndroidStudioProjects/cornerMentor20/app/src/main/res/layout/info_materia_fragment.xml" value="0.18541666666666667" />
+        <entry key="..\:/Users/super/AndroidStudioProjects/cornerMentor20/app/src/main/res/layout/lista_recyclerview.xml" value="0.3625" />
+        <entry key="..\:/Users/super/AndroidStudioProjects/cornerMentor20/app/src/main/res/layout/pantallacreditos.xml" value="0.3625" />
+        <entry key="..\:/Users/super/AndroidStudioProjects/cornerMentor20/app/src/main/res/layout/pantallaprofesor.xml" value="0.3625" />
         <entry key="..\:/Users/super/AndroidStudioProjects/cornerMentor20/app/src/main/res/layout/renglon_asesoria.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/super/AndroidStudioProjects/cornerMentor20/app/src/main/res/layout/renglon_materia.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/super/AndroidStudioProjects/cornerMentor20/app/src/main/res/menu/bottom_nav_menu.xml" value="0.3625" />

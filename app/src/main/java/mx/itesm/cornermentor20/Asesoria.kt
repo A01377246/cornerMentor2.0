@@ -4,5 +4,5 @@ package mx.itesm.cornermentor20
 
 
 
-data class Asesoria(var materia: String ="", var mentor: String = "", var fecha: String = "", var horario: String = "", var idAlumno: String = "")
+data class Asesoria(var materia: String ="", var mentor: String = "", var fecha: String = "", var horario: String = "", var idAlumno: String = "", var idMentor: String = "", var llaveAsesoria: String ="")
 
