@@ -108,7 +108,7 @@ class HomeFragment : Fragment(), ListenerRecycler {
 
         //referencia.setValue(asesoria1)
 
-        var asesoria2 = Asesoria("Matemáticas Discretas", "Carlos", "6/13/2022", "15:00", "" )
+        var asesoria2 = Asesoria("Matemáticas Discretas", "Carlos", "6/13/2022", "15:00", "", "", "", "Salón 6105" )
         val referencia = baseDatos.getReference("Asesorias/Matemáticas Discretas").push() // generar una llave única en la base de datos para las asesorías
         val llave = referencia.key //Obtener la llave única
         referencia.setValue(asesoria2) //Guardar la referencia en la base de datos

@@ -30,7 +30,8 @@ class AdaptadorAsesoriaRegistradaAlumno(private val contexto: Context, var arrAs
             vistaRenglon.findViewById<TextView>(R.id.tvFechaProgramada).setTextColor(Color.parseColor("#000000"))
             vistaRenglon.findViewById<TextView>(R.id.tvHorario).text = asesoriaRegistrada.horario
             vistaRenglon.findViewById<TextView>(R.id.tvHorario).setTextColor(Color.parseColor("#000000"))
-
+            vistaRenglon.findViewById<TextView>(R.id.tvLugarProgramado).text = asesoriaRegistrada.lugar
+            vistaRenglon.findViewById<TextView>(R.id.tvLugarProgramado).setTextColor(Color.parseColor("#000000"))
         }
     }
 

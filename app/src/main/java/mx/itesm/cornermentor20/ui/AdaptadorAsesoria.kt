@@ -29,7 +29,8 @@ class AdaptadorAsesoria (private val contexto: Context, var arrAsesorias: Array<
             vistaRenglon.findViewById<TextView>(R.id.tvFecha).setTextColor(Color.parseColor("#000000"))
             vistaRenglon.findViewById<TextView>(R.id.tvHora).text = "Hora: ${asesoria.horario}"
             vistaRenglon.findViewById<TextView>(R.id.tvHora).setTextColor(Color.parseColor("#000000"))
-
+            vistaRenglon.findViewById<TextView>(R.id.tvLugar).text = "Lugar: ${asesoria.lugar}"
+            vistaRenglon.findViewById<TextView>(R.id.tvLugar).setTextColor(Color.parseColor("#000000"))
         }
 
 
