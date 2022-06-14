@@ -1,6 +1,7 @@
 package mx.itesm.cornermentor20.ui
 
 import android.content.Context
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,10 +22,13 @@ class AdaptadorAsesoria (private val contexto: Context, var arrAsesorias: Array<
 
         fun set(asesoria: Asesoria){
             // Poner en los textView algunos elementos (importantes para el usuario) de asesoria
-
+            //vistaRenglon.setBackgroundColor(Color.parseColor("#FFFFFF"))
             vistaRenglon.findViewById<TextView>(R.id.tvMentor).text = "Mentor: ${asesoria.mentor}"
+            vistaRenglon.findViewById<TextView>(R.id.tvMentor).setTextColor(Color.parseColor("#000000"))
             vistaRenglon.findViewById<TextView>(R.id.tvFecha).text = "Fecha: ${asesoria.fecha}"
+            vistaRenglon.findViewById<TextView>(R.id.tvFecha).setTextColor(Color.parseColor("#000000"))
             vistaRenglon.findViewById<TextView>(R.id.tvHora).text = "Hora: ${asesoria.horario}"
+            vistaRenglon.findViewById<TextView>(R.id.tvHora).setTextColor(Color.parseColor("#000000"))
 
         }
 

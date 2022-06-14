@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         val intentPrevio = getIntent()
         val nombreUsuario = intentPrevio.getStringExtra("usuario")
 
-        binding.nombreUsuarioTV.text = "$nombreUsuario"
+        //binding.nombreUsuarioTV.text = "$nombreUsuario"
 
         val navView: BottomNavigationView = binding.navView
 

@@ -1,5 +1,6 @@
 package mx.itesm.cornermentor20
 
+import android.graphics.Color
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -49,6 +50,7 @@ class InfoMateriaFrag : ListFragment() {
 
             val adaptadorSpinnerAsesoria = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, args.materia.submaterias)
             binding.sPAsesorias.adapter = adaptadorSpinnerAsesoria
+            binding.sPAsesorias.setBackgroundColor(Color.parseColor("#FFFFFF"))
 
             binding.btnSeleccionarSubMateria.setOnClickListener() {
                 var subMateriaSeleccionada = binding.sPAsesorias.selectedItem.toString() //Guardar la submateria seleccionada por el usuario para pasarla al siguiente fragmento

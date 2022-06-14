@@ -1,6 +1,7 @@
 package mx.itesm.cornermentor20
 
 import android.content.Context
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,7 +15,9 @@ class AdaptadorMateria(private val context: Context, var arrMaterias:Array<Mater
 
         class RenglonMateria(var vistaRenglon: View): RecyclerView.ViewHolder(vistaRenglon){
            fun set(materia: Materia){
+               vistaRenglon.setBackgroundColor(Color.parseColor("#FFFFFF")) //Cambiar el color de fondo del renglon
                vistaRenglon.findViewById<TextView>(R.id.tvMateria).text = materia.nombre
+               vistaRenglon.findViewById<TextView>(R.id.tvMateria).setTextColor(Color.parseColor("#000000"))
                vistaRenglon.findViewById<ImageView>(R.id.imgMateria).setImageResource(R.drawable.notebook_and_pen) //Poner una imagen de un cuaderno y pluma por el momento, reemplazar
                                                                                                                     //Después con algo alusivo a la materia
            }

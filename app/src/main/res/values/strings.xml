@@ -2,7 +2,7 @@
     <string name="app_name">cornerMentor2.0</string>
     <string name="title_home">Materias</string>
     <string name="title_dashboard">Mis Asesorías programadas</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_notifications">Acerca De</string>
 
     <string-array name="Materias">
         <item>Programacion</item>
